@@ -1,7 +1,18 @@
 dir=${shell pwd}
 
-install: clean
+install: cleanAll vimrc screenrc
+
+cleanAll: vimrcClean screenrcClean
+
+vimrc:
 	ln -s ${dir}/.vimrc ~/
 
-clean:
+vimrcClean:
 	rm -f ~/.vimrc
+
+screenrc:
+	ln -s ${dir}/.screenrc ~/
+
+screenrcClean:
+	rm -f ~/.screenrc
+
