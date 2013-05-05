@@ -34,6 +34,7 @@ Bundle 'L9'
 Bundle 'juvenn/mustache.vim'
 Bundle 'mattn/zencoding-vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
 " }}}
 
 " Options {{{
@@ -41,9 +42,10 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax enable
-colorscheme desert
-set number
 set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+set number
 set laststatus=2
 set cmdheight=1
 set history=300
