@@ -35,6 +35,7 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'mattn/zencoding-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/VisIncr'
 " }}}
 
 " Options {{{
@@ -111,6 +112,10 @@ endif
 "  Plugin Tplr : Template Reader (by Ivan Enderlin) {{{
 let g:TEMPLATE_HOME = "~/.vim/templates/"
 command -narg=1 Tplr :execute ".read " . TEMPLATE_HOME . expand("<args>") . ".template"
+" }}}
+
+" Clean Installer Tags {{{
+command CleanInstlr :execute "%s/\/\/ Jacques Bodin-Hullin Tag .\+\n\n//g"
 " }}}
 
 " PHP {{{

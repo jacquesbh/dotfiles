@@ -1,4 +1,4 @@
-set background dark
+set background=dark
 colorscheme solarized
 
 set lines=999
