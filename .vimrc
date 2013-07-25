@@ -36,6 +36,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/VisIncr'
+Bundle 'puppetlabs/puppet-syntax-vim'
 " }}}
 
 " Options {{{
