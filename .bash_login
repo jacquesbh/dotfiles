@@ -47,8 +47,6 @@ export PS1='\[\033[01;32m\]\u@\H\[\033[01;36m\] \w `git_branch_color``git_branch
 
 # PATH
 # -----------------------------------------------------------------------
-# php 5.5
-PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
 # ~/.bin & ~/bin
 PATH=~/bin:~/.bin:$PATH
 # Homebrew
