@@ -26,10 +26,10 @@ bashlogin:
 	ln -s ${dir}/.bash_login ~/
 
 bashloginClean:
-	rm -r ~/.bash_login
+	rm -f ~/.bash_login
 
 dedicated:
 	ln -s ${dir}/.dedicated.bash ~/
 
 dedicatedClean:
-	rm -r ~/.dedicated.bash
+	rm -f ~/.dedicated.bash
