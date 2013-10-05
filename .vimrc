@@ -37,6 +37,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/VisIncr'
 Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'jtratner/vim-flavored-markdown'
 " }}}
 
 " Options {{{
@@ -94,9 +95,10 @@ let use_xhtml = 1
 " }}}
 
 " Filetypes {{{
-augroup md
-    au BufNewFile,BufRead *.md set filetype=markdown 
-augroup end
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
 augroup a2
     au BufNewFile,BufRead *.a2 set filetype=apache 
 augroup end
