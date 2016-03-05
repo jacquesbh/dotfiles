@@ -1,8 +1,8 @@
 dir=${shell pwd}
 
-install: cleanAll vimrc screenrc gvimrc bashlogin dedicated
+install: cleanAll vimrc screenrc gvimrc bashlogin
 
-cleanAll: vimrcClean screenrcClean gvimrcClean bashloginClean dedicated
+cleanAll: vimrcClean screenrcClean gvimrcClean bashloginClean
 
 gvimrc:
 	ln -s ${dir}/.gvimrc ~/
@@ -28,8 +28,3 @@ bashlogin:
 bashloginClean:
 	rm -f ~/.bash_login
 
-dedicated:
-	ln -s ${dir}/.dedicated.bash ~/
-
-dedicatedClean:
-	rm -f ~/.dedicated.bash
