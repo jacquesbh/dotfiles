@@ -9,6 +9,8 @@ set nocompatible    " be iMproved
 set encoding=utf-8  " Character encoding
 filetype off        " required!
 set term=$TERM      " name of the terminal
+set modeline
+set modelines=5
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -38,6 +40,15 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/VisIncr'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'jtratner/vim-flavored-markdown'
+Bundle 'vim-scripts/Gundo'
+"Bundle 'airblade/vim-gitgutter'
+Bundle 'chase/vim-ansible-yaml'
+Bundle 'chrisbra/changesPlugin'
+" }}}
+
+" Sources {{{
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
 " }}}
 
 " Options {{{
@@ -46,8 +57,8 @@ filetype plugin on
 filetype indent on
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 set number
 set laststatus=2
 set cmdheight=1
@@ -69,10 +80,13 @@ set showbreak=↪
 set fillchars=vert:│,fold:┄,diff:╱
 set nolist
 set title
-set guifont=Consolas
+"set guifont=
 set wildignore=*.o,*.bin
 set hlsearch
 set updatetime=100
+set colorcolumn=80
+set exrc
+set secure
 
 " Backup
 set backup
@@ -80,10 +94,18 @@ set writebackup
 set backupdir=~/.vim/vim_bkp,.
 set directory=~/.vim/vim_swp,.
 
+" Undo
+set undofile
+set undodir=~/.vim/undo
+
 " Folding
 set foldenable
 set foldcolumn=3
 set foldmethod=marker
+
+" Ansible
+let g:ansible_options = {'ignore_blank_lines': 0}
+
 " /Options }}}
 
 " Key leader {{{
@@ -205,3 +227,13 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_use_caching = 1
 " }}}
+
+" Highlight trailing spaces {{{
+highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+" }}}
+
